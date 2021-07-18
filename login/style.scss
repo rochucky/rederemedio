@@ -1,0 +1,108 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  font-size: 10px;
+  @media screen and (max-width: 1366px) {
+    font-size: 8px;
+  }
+  font-family: Roboto-Light;
+  overflow-x: hidden;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f0f0f0;
+  .card {
+    background-color: white;
+    padding: 5rem;
+    border-radius: 5px;
+    min-width: 35rem;
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        padding: 2rem;
+        max-width: 20rem;
+      }
+    }
+    .error {
+      color: red;
+      p {
+        font-size: 1.4rem;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .formItem {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-family: Roboto-Bold;
+        color: gray;
+        padding: 0.6rem;
+        font-size: 2rem;
+      }
+      input {
+        font-family: Roboto-Light;
+        font-size: 1.6rem;
+        margin: 0 0.6rem 1rem 0.6rem;
+        padding: 1rem;
+        border-radius: 50px;
+        // border: 0.2px solid rgba(black, 0.3);
+        border: 0;
+        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+        outline: none;
+      }
+    }
+    .buttons {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 2rem;
+      button {
+        font-size: 2rem;
+        font-family: Roboto-Bold;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border: none;
+        &.confirm {
+          background-color: #1e5888;
+          color: white;
+          width: 100%;
+          &:hover {
+            background-color: rgba(#1e5888, 0.7);
+          }
+          &:active {
+            background-color: rgba(#1e5888, 0.5);
+          }
+        }
+      }
+    }
+    .cadastrar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+      a {
+        font-family: Roboto-Medium;
+        text-decoration: none;
+        color: #1e5888;
+        font-size: 2rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

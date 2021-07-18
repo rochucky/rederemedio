@@ -1,0 +1,135 @@
+@import url("../_style.scss");
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  font-size: 10px;
+  @media screen and (max-width: 1366px) {
+    font-size: 8px;
+  }
+  font-family: Roboto-Light;
+  overflow-x: hidden;
+}
+
+body {
+  .page {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .menu {
+    flex: 0;
+    width: fit-content;
+    max-width: 0px;
+    min-width: 0px;
+    overflow: hidden;
+    transition: 0.25s ease;
+    background-color: rgba(#27276e, 0.95);
+    color: white;
+    &.expanded {
+      min-width: 300px;
+      overflow: visible;
+    }
+    .user {
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+      min-height: 5rem;
+      padding: 1rem;
+      background-color: #27276e;
+    }
+    .items {
+      margin-top: 2rem;
+      ul {
+        .menuItem {
+          font-size: 2.4rem;
+          padding: 1rem;
+          cursor: pointer;
+          &:hover,
+          &.selected {
+            background-color: #27276e;
+          }
+        }
+      }
+    }
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    .top {
+      flex: 1;
+      background-color: #27276e;
+      max-height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      .burger-icon {
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        height: 4rem;
+        width: 5rem;
+        .line {
+          display: block;
+          position: absolute;
+          width: 4rem;
+          height: 0.4rem;
+          background-color: white;
+          left: 0.5rem;
+          -webkit-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+          -webkit-transition: 0.25s ease-in-out;
+          -moz-transition: 0.25s ease-in-out;
+          -o-transition: 0.25s ease-in-out;
+          transition: 0.25s ease-in-out;
+          opacity: 1;
+          &:nth-child(1) {
+            top: 0.5rem;
+          }
+          &:nth-child(2) {
+            top: 2rem;
+            transform: translateY(-50%);
+          }
+          &:nth-child(3) {
+            top: 3.5rem;
+            transform: translateY(-100%);
+          }
+        }
+        &.expanded {
+          .line {
+            &:nth-child(1) {
+              transform: translateY(-50%) rotate(45deg);
+              top: 2rem;
+            }
+            &:nth-child(2) {
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              transform: translateY(-50%) rotate(-45deg);
+              top: 2rem;
+            }
+          }
+        }
+      }
+      .logo {
+        img {
+          max-height: 5rem;
+        }
+      }
+    }
+    .content {
+      flex: 1;
+      font-size: 2rem;
+      overflow-y: scroll;
+      background-color: #f0f0f0;
+    }
+  }
+}
